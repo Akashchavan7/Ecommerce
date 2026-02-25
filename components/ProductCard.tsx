@@ -1,15 +1,23 @@
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import {
+View,
+Text,
+Image,
+StyleSheet,
+TouchableOpacity
+} from "react-native";
 
 export default function ProductCard({item,onPress}:any){
 
-const price=item.price-(item.price*item.discountPercentage)/100;
+const discount =
+item.price -
+(item.price*item.discountPercentage)/100;
 
 return(
 
 <TouchableOpacity
 style={styles.card}
-onPress={onPress}
 activeOpacity={0.9}
+onPress={onPress}
 >
 
 <Image
@@ -17,76 +25,68 @@ source={{uri:item.thumbnail}}
 style={styles.image}
 />
 
-<View style={styles.badge}>
-<Text style={styles.badgeText}>
-{Math.round(item.discountPercentage)}% OFF
-</Text>
-</View>
+<View style={styles.info}>
 
 <Text numberOfLines={1} style={styles.title}>
 {item.title}
 </Text>
 
 <Text style={styles.price}>
-₹ {Math.round(price)}
+₹ {Math.round(discount)}
 </Text>
 
-<View style={styles.rating}>
-<Text style={{color:"#fff"}}>
+<Text style={styles.rating}>
 ⭐ {item.rating}
 </Text>
+
 </View>
 
 </TouchableOpacity>
 
 );
+
 }
 
 const styles=StyleSheet.create({
 
 card:{
 flex:1,
+margin:8,
 backgroundColor:"#fff",
-margin:6,
-padding:10,
-borderRadius:10,
-elevation:3
+borderRadius:18,
+overflow:"hidden",
+
+shadowColor:"#000",
+shadowOpacity:0.2,
+shadowRadius:12,
+shadowOffset:{width:0,height:8},
+
+elevation:8
 },
 
 image:{
-height:130,
-borderRadius:8
+height:150,
+width:"100%"
 },
 
-badge:{
-position:"absolute",
-top:8,
-left:8,
-backgroundColor:"green",
-paddingHorizontal:6,
-borderRadius:4
-},
-
-badgeText:{
-color:"#fff",
-fontSize:11
+info:{
+padding:10
 },
 
 title:{
-marginTop:8
+fontSize:14,
+fontWeight:"600"
 },
 
 price:{
+fontSize:16,
 fontWeight:"bold",
 marginTop:4
 },
 
 rating:{
-backgroundColor:"green",
-alignSelf:"flex-start",
-paddingHorizontal:6,
-borderRadius:4,
-marginTop:6
+marginTop:4,
+color:"#388e3c"
 }
 
 });

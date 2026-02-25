@@ -1,15 +1,22 @@
-import { View,FlatList,StyleSheet,ActivityIndicator } from "react-native";
-import { useEffect,useState,useMemo } from "react";
+import {
+View,
+FlatList,
+StyleSheet,
+ActivityIndicator
+} from "react-native";
+
+import { useEffect,useState } from "react";
+
 import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
 import { getProducts } from "@/services/productService";
 import { useRouter } from "expo-router";
 
-export default function Home(){
+export default function HomeScreen(){
 
 const router=useRouter();
 
-const [products,setProducts]=useState<any[]>([]);
+const [products,setProducts]=useState([]);
 const [loading,setLoading]=useState(true);
 const [search,setSearch]=useState("");
 
@@ -23,19 +30,20 @@ setProducts(data);
 setLoading(false);
 };
 
-const filtered=useMemo(()=>{
-return products.filter(p=>
+const filtered=products.filter((p:any)=>
 p.title.toLowerCase().includes(
 search.toLowerCase()
-));
-},[search,products]);
+)
+);
 
 if(loading){
+
 return(
 <View style={styles.loader}>
 <ActivityIndicator size="large"/>
 </View>
 );
+
 }
 
 return(
@@ -50,21 +58,38 @@ setSearch={setSearch}
 <FlatList
 data={filtered}
 numColumns={2}
-keyExtractor={(item)=>item.id.toString()}
+showsVerticalScrollIndicator={false}
+contentContainerStyle={{paddingTop:10}}
+keyExtractor={(item:any)=>item.id.toString()}
 renderItem={({item})=>(
+
 <ProductCard
 item={item}
-onPress={()=>router.push(`/product/${item.id}`)}
+onPress={()=>
+router.push(`/product/${item.id}` as any)
+}
 />
+
 )}
 />
 
 </View>
 
 );
+
 }
 
 const styles=StyleSheet.create({
-container:{flex:1,backgroundColor:"#f3f4f6"},
-loader:{flex:1,justifyContent:"center",alignItems:"center"}
+
+container:{
+flex:1,
+backgroundColor:"#eef2f7"
+},
+
+loader:{
+flex:1,
+justifyContent:"center",
+alignItems:"center"
+}
+
 });

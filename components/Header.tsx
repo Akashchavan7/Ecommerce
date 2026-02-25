@@ -1,48 +1,57 @@
-import { View, Text, TextInput, StyleSheet } from "react-native";
+import { View,TextInput,StyleSheet,Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Header({search,setSearch}:any){
 
 return(
 
-<View style={styles.header}>
+<LinearGradient
+colors={["#4facfe","#00f2fe"]}
+style={styles.header}
+>
 
 <Text style={styles.logo}>
-NovaStore
+ShopSphere
 </Text>
 
 <TextInput
-placeholder="Search products"
+placeholder="Search products..."
+placeholderTextColor="#555"
 style={styles.search}
 value={search}
 onChangeText={setSearch}
 />
 
-</View>
+</LinearGradient>
 
 );
+
 }
 
-const styles = StyleSheet.create({
+const styles=StyleSheet.create({
 
 header:{
-backgroundColor:"#111827",
 paddingTop:50,
+paddingBottom:20,
 paddingHorizontal:15,
-paddingBottom:15
+borderBottomLeftRadius:25,
+borderBottomRightRadius:25,
+elevation:10
 },
 
 logo:{
 color:"#fff",
-fontSize:26,
+fontSize:24,
 fontWeight:"bold",
 marginBottom:10
 },
 
 search:{
 backgroundColor:"#fff",
-height:42,
-borderRadius:10,
-paddingHorizontal:12
+height:45,
+borderRadius:12,
+paddingHorizontal:15,
+elevation:6
 }
 
 });
