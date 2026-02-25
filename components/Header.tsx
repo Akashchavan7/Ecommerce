@@ -1,14 +1,6 @@
-import {
- View,
- Text,
- TextInput,
- StyleSheet
-} from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 
-export default function Header({
- search,
- setSearch
-}:any){
+export default function Header({search,setSearch}:any){
 
 return(
 
@@ -19,8 +11,7 @@ NovaStore
 </Text>
 
 <TextInput
-placeholder="Search products..."
-placeholderTextColor="#777"
+placeholder="Search products"
 style={styles.search}
 value={search}
 onChangeText={setSearch}
