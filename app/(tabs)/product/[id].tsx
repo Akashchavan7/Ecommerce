@@ -22,6 +22,7 @@ fetch(`https://dummyjson.com/products/${id}`)
 
 },[]);
 
+
 if(!product) return null;
 
 return(
