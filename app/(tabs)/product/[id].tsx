@@ -1,27 +1,21 @@
-import {
- View,
- Text,
- Image,
- StyleSheet
-} from "react-native";
-
+import { View,Text,Image,StyleSheet } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { useEffect,useState } from "react";
+import { getProductById } from "@/services/productService";
 
-export default function ProductDetail(){
+export default function Product(){
 
-const {id} = useLocalSearchParams();
-
+const {id}=useLocalSearchParams();
 const [product,setProduct]=useState<any>();
 
 useEffect(()=>{
-
-fetch(`https://dummyjson.com/products/${id}`)
-.then(res=>res.json())
-.then(setProduct);
-
+load();
 },[]);
 
+const load=async()=>{
+const data=await getProductById(Number(id));
+setProduct(data);
+};
 
 if(!product) return null;
 
@@ -51,12 +45,9 @@ style={styles.image}
 );
 }
 
-const styles = StyleSheet.create({
+const styles=StyleSheet.create({
 
-container:{
-flex:1,
-padding:20
-},
+container:{flex:1,padding:20},
 
 image:{
 height:300,
