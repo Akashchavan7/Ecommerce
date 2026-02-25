@@ -1,37 +1,73 @@
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import {
+ View,
+ Text,
+ FlatList,
+ StyleSheet,
+ ActivityIndicator
+} from "react-native";
+
 import { useEffect, useState } from "react";
+
+import ProductCard from "@/components/ProductCard";
+import { getProducts } from "@/services/api";
 
 export default function HomeScreen() {
 
 const [products,setProducts] = useState<any[]>([]);
+const [loading,setLoading] = useState(true);
 
 useEffect(()=>{
 
-fetch("https://dummyjson.com/products")
-.then(res=>res.json())
-.then(data=>{
-setProducts(data.products);
-});
+loadProducts();
 
 },[]);
+
+const loadProducts = async ()=>{
+
+try{
+
+const data = await getProducts();
+setProducts(data);
+
+}catch(error){
+
+console.log("API Error",error);
+
+}
+finally{
+setLoading(false);
+}
+
+};
+
+if(loading){
+
+return(
+<View style={styles.loader}>
+<ActivityIndicator size="large"/>
+</View>
+);
+
+}
 
 return(
 
 <View style={styles.container}>
 
-<Text style={styles.title}>
-Ecommerce Store 🛒
+<Text style={styles.header}>
+Flipkart Store 🛒
 </Text>
 
 <FlatList
 data={products}
+numColumns={2}
+showsVerticalScrollIndicator={false}
 keyExtractor={(item)=>item.id.toString()}
 renderItem={({item})=>(
 
-<View style={styles.card}>
-<Text>{item.title}</Text>
-<Text>₹ {item.price}</Text>
-</View>
+<ProductCard
+item={item}
+/>
 
 )}
 />
@@ -45,21 +81,20 @@ const styles = StyleSheet.create({
 
 container:{
 flex:1,
-padding:15
+backgroundColor:"#f1f3f6",
+paddingHorizontal:8
 },
 
-title:{
+header:{
 fontSize:22,
 fontWeight:"bold",
-marginBottom:10
+marginVertical:10
 },
 
-card:{
-backgroundColor:"#fff",
-padding:15,
-marginBottom:10,
-borderRadius:12,
-elevation:5
+loader:{
+flex:1,
+justifyContent:"center",
+alignItems:"center"
 }
 
 });
