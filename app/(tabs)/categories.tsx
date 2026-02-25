@@ -23,16 +23,16 @@ return(
 
 <FlatList
 data={data}
-keyExtractor={(item:any)=>item}
+keyExtractor={(item:any)=>item.slug}
 renderItem={({item})=>(
 
 <TouchableOpacity
 style={styles.card}
-onPress={()=>router.push(`/category/${item}` as any)}
+onPress={()=>router.push(`/category/${item.slug}` as any)}
 >
 
 <Text style={styles.text}>
-{item}
+{item.name}
 </Text>
 
 </TouchableOpacity>
