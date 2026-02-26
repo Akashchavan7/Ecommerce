@@ -1,50 +1,87 @@
-# Welcome to your Expo app 👋
+# ShopSphere 🛍️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A E-commerce mobile application built using **React Native + Expo Router**.
 
-## Get started
+This app demonstrates real-world mobile architecture, API integration, reusable components, and premium UI design.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Screens
 
-2. Start the app
+- 🏠 Home (Product Listing)
+- 🗂 Categories (Search + Grid Layout)
+- 🛒 Cart
+- 👤 Profile
+- 📦 Product Details
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## ✨ Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- Dynamic product fetching using DummyJSON API
+- Reusable ProductCard component
+- Floating premium bottom navigation
+- Category search functionality
+- Dynamic routing with Expo Router
+- Modern UI with gradients and shadows
+- Clean project structure
+- Proper Git commit history
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🛠 Tech Stack
 
-When you're ready, run:
+- React Native
+- Expo
+- Expo Router
+- TypeScript
+- React Hooks (useState, useEffect)
+- Fetch API
+- FlatList
 
-```bash
-npm run reset-project
+---
+
+## Project Structure
+
+```
+app/
+ ├── (tabs)/
+ │    ├── _layout.tsx
+ │    ├── index.tsx
+ │    ├── categories.tsx
+ │    ├── cart.tsx
+ │    └── profile.tsx
+ │
+ ├── product/
+ │    └── [id].tsx
+ │
+ ├── category/
+ │    └── [name].tsx
+ │
+components/
+ ├── ProductCard.tsx
+ └── Header.tsx
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## 🚀 Run Locally
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+npx expo start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 📌 API Used
 
-Join our community of developers creating universal apps.
+https://dummyjson.com/products
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+
+## 👨‍💻 Author
+
+Akash Chavan  
+GitHub: https://github.com/Akashchavan7
