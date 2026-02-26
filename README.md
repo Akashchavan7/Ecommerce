@@ -1,4 +1,4 @@
-# ShopSphere 🛍️
+# ShopSphere 
 
 A E-commerce mobile application built using **React Native + Expo Router**.
 
@@ -6,17 +6,17 @@ This app demonstrates real-world mobile architecture, API integration, reusable 
 
 ---
 
-## 📱 Screens
+##  Screens
 
-- 🏠 Home (Product Listing)
-- 🗂 Categories (Search + Grid Layout)
-- 🛒 Cart
-- 👤 Profile
-- 📦 Product Details
+-  Home (Product Listing)
+-  Categories (Search + Grid Layout)
+-  Cart
+-  Profile
+-  Product Details
 
 ---
 
-## ✨ Features
+##  Features
 
 - Dynamic product fetching using DummyJSON API
 - Reusable ProductCard component
@@ -29,7 +29,7 @@ This app demonstrates real-world mobile architecture, API integration, reusable 
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - React Native
 - Expo
@@ -65,7 +65,7 @@ components/
 
 ---
 
-## 🚀 Run Locally
+##  Run Locally
 
 ```bash
 npm install
@@ -74,7 +74,7 @@ npx expo start
 
 ---
 
-## 📌 API Used
+##  API Used
 
 https://dummyjson.com/products
 
