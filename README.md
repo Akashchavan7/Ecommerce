@@ -81,13 +81,14 @@ https://dummyjson.com/products
 ---
 ##  App Preview
 
-|  Home | Categories |
-|----------|--------------|
-| ![](assets/screenshots/home.png) | ![](assets/screenshots/categories.png) |
+###  Home
+![Home](assets/screenshots/home.png)
 
-| Cart |
-|----------|
-| ![](assets/screenshots/cart.png) |
+###  Categories
+![Categories](assets/screenshots/categories.png)
+
+###  Cart
+![Cart](assets/screenshots/cart.png)
 
 ---
 
