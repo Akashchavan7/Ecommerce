@@ -79,16 +79,15 @@ npx expo start
 https://dummyjson.com/products
 
 ---
-##  Screenshots
+##  App Preview
 
-###  Home
-![Home](assets/screenshots/home.png)
+|  Home | Categories |
+|----------|--------------|
+| ![](assets/screenshots/home.png) | ![](assets/screenshots/categories.png) |
 
-###  Categories
-![Categories](assets/screenshots/categories.png)
-
-###  Cart
-![Cart](assets/screenshots/cart.png)
+| Cart |
+|----------|
+| ![](assets/screenshots/cart.png) |
 
 ---
 
