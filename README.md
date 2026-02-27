@@ -79,9 +79,20 @@ npx expo start
 https://dummyjson.com/products
 
 ---
+##  Screenshots
 
+###  Home
+![Home](assets/screenshots/home.png)
 
-## 👨‍💻 Author
+###  Categories
+![Categories](assets/screenshots/categories.png)
+
+###  Cart
+![Cart](assets/screenshots/cart.png)
+
+---
+
+##  Author
 
 Akash Chavan  
 GitHub: https://github.com/Akashchavan7
